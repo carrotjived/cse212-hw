@@ -1,3 +1,6 @@
+using System.Globalization;
+using System.Runtime.ExceptionServices;
+
 public static class Arrays
 {
     /// <summary>
@@ -13,7 +16,26 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        // 1. Create an empty array to store the result
+        // 2. Add the first number to the array
+        // 3. Loop with the range of the length of the multiples starting with index=1 to start storing from second up to the max length
+        // 4. Add the previous number to the initial number to create multiples
+        // 5. Append the number to the array
+        // 6. Return the result array
+
+
+        var result = new double[length];
+        result[0] = number;
+
+        for (int index = 1; index < length; index++)
+        {
+            number = number += result[0];
+            result[index] = number;
+        }
+
+
+
+        return result;  // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +51,15 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // 1. Create a new List as resultList
+        // 2. Use GetRange function to get the first series: first value is the count of the list minus the amount variable to get the index, second value is the amount variable for the range, then add them using AddRange function to the result list.
+        // 3. Use GetRange function to get the rest of the series: first value is index 0, then second value is the count of the list minus the amount as range, then append them with AddRange function to the result list.
+
+        List<int> resultList = new List<int>();
+        resultList.AddRange(data.GetRange(data.Count - amount, amount));
+        resultList.AddRange(data.GetRange(0, data.Count - amount));
+
+
     }
 }
