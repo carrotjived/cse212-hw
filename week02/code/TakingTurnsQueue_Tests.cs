@@ -12,6 +12,11 @@ public class TakingTurnsQueueTests
     // run until the queue is empty
     // Expected Result: Bob, Tim, Sue, Bob, Tim, Sue, Tim, Sue, Tim, Tim
     // Defect(s) Found: 
+    // Result of initial test: The first on the queue is not equal to the expected first person on the queue (Sue != Bob)
+    // Error: Whenever it enques, it will put it in the front of the of queue instead of the back. 
+    // Fix: Change the Enqueue function from Insert to Add. To make sure that the newly added person will be placed at the back of the queue instead in the first of the queue.  
+
+    
     public void TestTakingTurnsQueue_FiniteRepetition()
     {
         var bob = new Person("Bob", 2);
@@ -43,7 +48,7 @@ public class TakingTurnsQueueTests
     // Scenario: Create a queue with the following people and turns: Bob (2), Tim (5), Sue (3)
     // After running 5 times, add George with 3 turns.  Run until the queue is empty.
     // Expected Result: Bob, Tim, Sue, Bob, Tim, Sue, Tim, George, Sue, Tim, George, Tim, George
-    // Defect(s) Found: 
+    // Defect(s) Found: None
     public void TestTakingTurnsQueue_AddPlayerMidway()
     {
         var bob = new Person("Bob", 2);
@@ -86,6 +91,9 @@ public class TakingTurnsQueueTests
     // Run 10 times.
     // Expected Result: Bob, Tim, Sue, Bob, Tim, Sue, Tim, Sue, Tim, Tim
     // Defect(s) Found: 
+    // Result of Initial Test: There was a missing person element on the series of the person array. 
+    // Error: The Enqueue function does not have code to add persons with infinite turns(0).
+    // Fix: Add an if statement that when the turns is zero(0) it should be enqueued automatically. 
     public void TestTakingTurnsQueue_ForeverZero()
     {
         var timTurns = 0;
@@ -117,6 +125,9 @@ public class TakingTurnsQueueTests
     // Run 10 times.
     // Expected Result: Tim, Sue, Tim, Sue, Tim, Sue, Tim, Tim, Tim, Tim
     // Defect(s) Found: 
+    // Result of Initial Test: There was a missing person element on the series of the person array. 
+    // Error: Enqueue function does not recognize negative number as infinite number or zero
+    // Fix: Change the Enqueue function's infinite if condition to accept negative number: person.Turns <= 0
     public void TestTakingTurnsQueue_ForeverNegative()
     {
         var timTurns = -3;
@@ -143,7 +154,7 @@ public class TakingTurnsQueueTests
     [TestMethod]
     // Scenario: Try to get the next person from an empty queue
     // Expected Result: Exception should be thrown with appropriate error message.
-    // Defect(s) Found: 
+    // Defect(s) Found: None
     public void TestTakingTurnsQueue_Empty()
     {
         var players = new TakingTurnsQueue();
