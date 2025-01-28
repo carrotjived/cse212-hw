@@ -99,7 +99,7 @@ public class PriorityQueueTests
         var exampleFive = new PriorityItem("Q", 2);
         var exampleSix = new PriorityItem("M", 0);
 
-        String expectedResult = "B";
+
 
         var priorityQueue = new PriorityQueue();
         priorityQueue.Enqueue(exampleOne.Value, exampleOne.Priority);
@@ -108,11 +108,22 @@ public class PriorityQueueTests
         priorityQueue.Enqueue(exampleFour.Value, exampleFour.Priority);
         priorityQueue.Enqueue(exampleFive.Value, exampleFive.Priority);
         priorityQueue.Enqueue(exampleSix.Value, exampleSix.Priority);
-        var value = priorityQueue.Dequeue();
+        var value1 = priorityQueue.Dequeue();
+        var value2 = priorityQueue.Dequeue();
+        var value3 = priorityQueue.Dequeue();
+        var value4 = priorityQueue.Dequeue();
+        var value5 = priorityQueue.Dequeue();
+        var value6 = priorityQueue.Dequeue();
 
         try
         {
-            Assert.AreEqual(expectedResult, value);
+
+            Assert.AreEqual("B", value1);
+            Assert.AreEqual("A", value2);
+            Assert.AreEqual("Z", value3);
+            Assert.AreEqual("Q", value4);
+            Assert.AreEqual("F", value5);
+            Assert.AreEqual("M", value6); 
         }
         catch
         {
@@ -121,7 +132,7 @@ public class PriorityQueueTests
 
     }
 
-     [TestMethod]
+    [TestMethod]
 
     public void TestPriorityQueue_DequeueHighestPriortityAtMiddle()
     {
@@ -132,7 +143,7 @@ public class PriorityQueueTests
         var exampleFive = new PriorityItem("Q", 2);
         var exampleSix = new PriorityItem("M", 0);
 
-        String expectedResult = "B";
+
 
         var priorityQueue = new PriorityQueue();
         priorityQueue.Enqueue(exampleOne.Value, exampleOne.Priority);
@@ -141,11 +152,69 @@ public class PriorityQueueTests
         priorityQueue.Enqueue(exampleFour.Value, exampleFour.Priority);
         priorityQueue.Enqueue(exampleFive.Value, exampleFive.Priority);
         priorityQueue.Enqueue(exampleSix.Value, exampleSix.Priority);
-        var value = priorityQueue.Dequeue();
+        var value1 = priorityQueue.Dequeue();
+        var value2 = priorityQueue.Dequeue();
+        var value3 = priorityQueue.Dequeue();
+        var value4 = priorityQueue.Dequeue();
+        var value5 = priorityQueue.Dequeue();
+        var value6 = priorityQueue.Dequeue();
+
 
         try
         {
-            Assert.AreEqual(expectedResult, value);
+            Assert.AreEqual("B", value1);
+            Assert.AreEqual("A", value2);
+            Assert.AreEqual("Z", value3);
+            Assert.AreEqual("Q", value4);
+            Assert.AreEqual("F", value5);
+            Assert.AreEqual("M", value6);
+
+        }
+        catch
+        {
+            Assert.Fail("Implement the test case and then remove this.");
+        }
+
+    }
+
+    [TestMethod]
+
+    
+public void TestPriorityQueue_DequeueEqualPriority()
+    {
+        var exampleOne = new PriorityItem("Z", 3);
+        var exampleTwo = new PriorityItem("F", 1);
+        var exampleThree = new PriorityItem("A", 4);
+        var exampleFour = new PriorityItem("Q", 2);
+        var exampleFive = new PriorityItem("B", 4);
+        var exampleSix = new PriorityItem("M", 0);
+
+
+
+        var priorityQueue = new PriorityQueue();
+        priorityQueue.Enqueue(exampleOne.Value, exampleOne.Priority);
+        priorityQueue.Enqueue(exampleTwo.Value, exampleTwo.Priority);
+        priorityQueue.Enqueue(exampleThree.Value, exampleThree.Priority);
+        priorityQueue.Enqueue(exampleFour.Value, exampleFour.Priority);
+        priorityQueue.Enqueue(exampleFive.Value, exampleFive.Priority);
+        priorityQueue.Enqueue(exampleSix.Value, exampleSix.Priority);
+        var value1 = priorityQueue.Dequeue();
+        var value2 = priorityQueue.Dequeue();
+        var value3 = priorityQueue.Dequeue();
+        var value4 = priorityQueue.Dequeue();
+        var value5 = priorityQueue.Dequeue();
+        var value6 = priorityQueue.Dequeue();
+
+
+        try
+        {
+            Assert.AreEqual("A", value1);
+            Assert.AreEqual("B", value2);
+            Assert.AreEqual("Z", value3);
+            Assert.AreEqual("Q", value4);
+            Assert.AreEqual("F", value5);
+            Assert.AreEqual("M", value6);
+
         }
         catch
         {
