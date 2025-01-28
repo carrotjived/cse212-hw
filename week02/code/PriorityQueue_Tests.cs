@@ -49,18 +49,18 @@ public class PriorityQueueTests
     // Defect(s) Found: None
     public void TestPriorityQueue_2()
     {
-        var exampleOne = new PriorityItem("first", 24);
-        var exampleTwo = new PriorityItem("second", 55);
-        var exampleThree = new PriorityItem("third", 25);
-        var exampleFour = new PriorityItem("fourth", 96);
-        var exampleFive = new PriorityItem("fifth", 45);
-        var exampleSix = new PriorityItem("sixth", 102);
-        var exampleSeven = new PriorityItem("seventh", 35);
-        var exampleEight = new PriorityItem("eighth", 77);
-        var exampleNine = new PriorityItem("ninth", 8);
-        var exampleTen = new PriorityItem("tenth", 23);
+        var exampleOne = new PriorityItem("first", 6);
+        var exampleTwo = new PriorityItem("second", 3);
+        var exampleThree = new PriorityItem("third", 1);
+        var exampleFour = new PriorityItem("fourth", 4);
+        var exampleFive = new PriorityItem("fifth", 2);
+        var exampleSix = new PriorityItem("sixth", 0);
+        // var exampleSeven = new PriorityItem("seventh", 35);
+        // var exampleEight = new PriorityItem("eighth", 102);
+        // var exampleNine = new PriorityItem("ninth", 8);
+        // var exampleTen = new PriorityItem("tenth", 23);
 
-        String expectedResult = "sixth";
+        String expectedResult = "first";
 
         var priorityQueue = new PriorityQueue();
         priorityQueue.Enqueue(exampleOne.Value, exampleOne.Priority);
@@ -69,10 +69,10 @@ public class PriorityQueueTests
         priorityQueue.Enqueue(exampleFour.Value, exampleFour.Priority);
         priorityQueue.Enqueue(exampleFive.Value, exampleFive.Priority);
         priorityQueue.Enqueue(exampleSix.Value, exampleSix.Priority);
-        priorityQueue.Enqueue(exampleSeven.Value, exampleSeven.Priority);
-        priorityQueue.Enqueue(exampleEight.Value, exampleEight.Priority);
-        priorityQueue.Enqueue(exampleNine.Value, exampleNine.Priority);
-        priorityQueue.Enqueue(exampleTen.Value, exampleTen.Priority);
+        // priorityQueue.Enqueue(exampleSeven.Value, exampleSeven.Priority);
+        // priorityQueue.Enqueue(exampleEight.Value, exampleEight.Priority);
+        // priorityQueue.Enqueue(exampleNine.Value, exampleNine.Priority);
+        // priorityQueue.Enqueue(exampleTen.Value, exampleTen.Priority);
         var value = priorityQueue.Dequeue();
 
         try
@@ -87,4 +87,70 @@ public class PriorityQueueTests
     }
 
     // Add more test cases as needed below.
+
+    [TestMethod]
+
+    public void TestPriorityQueue_DequeueHighestPriortityAtFront()
+    {
+        var exampleOne = new PriorityItem("B", 6);
+        var exampleTwo = new PriorityItem("Z", 3);
+        var exampleThree = new PriorityItem("F", 1);
+        var exampleFour = new PriorityItem("A", 4);
+        var exampleFive = new PriorityItem("Q", 2);
+        var exampleSix = new PriorityItem("M", 0);
+
+        String expectedResult = "B";
+
+        var priorityQueue = new PriorityQueue();
+        priorityQueue.Enqueue(exampleOne.Value, exampleOne.Priority);
+        priorityQueue.Enqueue(exampleTwo.Value, exampleTwo.Priority);
+        priorityQueue.Enqueue(exampleThree.Value, exampleThree.Priority);
+        priorityQueue.Enqueue(exampleFour.Value, exampleFour.Priority);
+        priorityQueue.Enqueue(exampleFive.Value, exampleFive.Priority);
+        priorityQueue.Enqueue(exampleSix.Value, exampleSix.Priority);
+        var value = priorityQueue.Dequeue();
+
+        try
+        {
+            Assert.AreEqual(expectedResult, value);
+        }
+        catch
+        {
+            Assert.Fail("Implement the test case and then remove this.");
+        }
+
+    }
+
+     [TestMethod]
+
+    public void TestPriorityQueue_DequeueHighestPriortityAtMiddle()
+    {
+        var exampleOne = new PriorityItem("Z", 3);
+        var exampleTwo = new PriorityItem("F", 1);
+        var exampleThree = new PriorityItem("A", 4);
+        var exampleFour = new PriorityItem("B", 6);
+        var exampleFive = new PriorityItem("Q", 2);
+        var exampleSix = new PriorityItem("M", 0);
+
+        String expectedResult = "B";
+
+        var priorityQueue = new PriorityQueue();
+        priorityQueue.Enqueue(exampleOne.Value, exampleOne.Priority);
+        priorityQueue.Enqueue(exampleTwo.Value, exampleTwo.Priority);
+        priorityQueue.Enqueue(exampleThree.Value, exampleThree.Priority);
+        priorityQueue.Enqueue(exampleFour.Value, exampleFour.Priority);
+        priorityQueue.Enqueue(exampleFive.Value, exampleFive.Priority);
+        priorityQueue.Enqueue(exampleSix.Value, exampleSix.Priority);
+        var value = priorityQueue.Dequeue();
+
+        try
+        {
+            Assert.AreEqual(expectedResult, value);
+        }
+        catch
+        {
+            Assert.Fail("Implement the test case and then remove this.");
+        }
+
+    }
 }
