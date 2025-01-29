@@ -36,7 +36,16 @@ class Geeks
         // Console.WriteLine(Function.CheckBraces("(robot[id + 1].Execute(.Pass() || (!robot[id * (2 + i)].Alive && stormy) || (robot[id - 1].Alive && lavaFlowing))"));
 
         // Console.WriteLine(Function.Run("a nut for a jar of tuna"));
-        Console.WriteLine(Function.Run2("5 3 7 + *"));
+        // Console.WriteLine(Function.Run2("5 3 7 + *"));
+
+        // SeedQueue.Run();
+
+        string original = "Stack Overflow";
+        string reversed = new string(original.Reverse().ToArray());
+
+        Console.WriteLine(reversed);
+
+
 
     }
 

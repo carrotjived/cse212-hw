@@ -22,7 +22,33 @@ public static class SetsAndMaps
     public static string[] FindPairs(string[] words)
     {
         // TODO Problem 1 - ADD YOUR CODE HERE
-        return [];
+
+        
+        var wordsInput = new HashSet<string>(words);
+        var hashSymmetric = new HashSet<string>();
+
+
+        
+
+        foreach(string word in wordsInput){
+            string reversed = new string(word.Reverse().ToArray());
+
+            if (word == reversed){
+                wordsInput.Remove(word);
+            }
+            if(wordsInput.Contains(reversed)){
+                string paired = word + " & " + reversed;
+                hashSymmetric.Add(paired);
+                wordsInput.Remove(word);
+                wordsInput.Remove(reversed);
+            }
+        }
+
+        string[] symmetric = new string[hashSymmetric.Count()];
+        hashSymmetric.CopyTo(symmetric);
+
+
+        return symmetric;
     }
 
     /// <summary>

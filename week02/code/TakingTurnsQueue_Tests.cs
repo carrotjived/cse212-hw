@@ -156,6 +156,7 @@ public class TakingTurnsQueueTests
     // Expected Result: Exception should be thrown with appropriate error message.
     // Defect(s) Found: None
     public void TestTakingTurnsQueue_Empty()
+
     {
         var players = new TakingTurnsQueue();
 
@@ -180,4 +181,7 @@ public class TakingTurnsQueueTests
             );
         }
     }
+
+    
+   
 }
