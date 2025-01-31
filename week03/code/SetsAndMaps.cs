@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 public static class SetsAndMaps
@@ -23,20 +24,23 @@ public static class SetsAndMaps
     {
         // TODO Problem 1 - ADD YOUR CODE HERE
 
-        
+
         var wordsInput = new HashSet<string>(words);
         var hashSymmetric = new HashSet<string>();
 
 
-        
 
-        foreach(string word in wordsInput){
+
+        foreach (string word in wordsInput)
+        {
             string reversed = new string(word.Reverse().ToArray());
 
-            if (word == reversed){
+            if (word == reversed)
+            {
                 wordsInput.Remove(word);
             }
-            if(wordsInput.Contains(reversed)){
+            if (wordsInput.Contains(reversed))
+            {
                 string paired = word + " & " + reversed;
                 hashSymmetric.Add(paired);
                 wordsInput.Remove(word);
@@ -69,6 +73,18 @@ public static class SetsAndMaps
         {
             var fields = line.Split(",");
             // TODO Problem 2 - ADD YOUR CODE HERE
+            var degreeField = fields[3];
+
+            if (!degrees.ContainsKey(degreeField.ToString()))
+            {
+                degrees[degreeField] = 1;
+            }
+
+            else
+            {
+                degrees[degreeField] += 1;
+            }
+
         }
 
         return degrees;
@@ -90,11 +106,13 @@ public static class SetsAndMaps
     /// Reminder: You can access a letter by index in a string by 
     /// using the [] notation.
     /// </summary>
-    public static bool IsAnagram(string word1, string word2)
-    {
-        // TODO Problem 3 - ADD YOUR CODE HERE
-        return false;
-    }
+    /// 
+
+
+   public static bool IsAnagram(string word1, string word2){
+    return false;
+   }
+
 
     /// <summary>
     /// This function will read JSON (Javascript Object Notation) data from the 

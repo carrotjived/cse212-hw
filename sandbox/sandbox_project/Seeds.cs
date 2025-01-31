@@ -26,6 +26,7 @@ public class SeedQueue
     }
 
     private string Dequeue()
+    
     {
         if (_queue.Count <= 0)
             throw new IndexOutOfRangeException();
