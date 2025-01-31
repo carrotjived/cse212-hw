@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Text.Json;
 
 public class Program
 {
@@ -8,17 +9,15 @@ public class Program
         // This project is here for you to use as a "Sandbox" to play around
         // with any code or ideas you have that do not directly apply to
         // one of your projects.
-        Stopwatch stopwatch = new Stopwatch();
-        stopwatch.Start();
-        
-        Console.WriteLine(Function.IsAnagram("ACT", "TAC"));
-        stopwatch.Stop();
+        // Stopwatch stopwatch = new Stopwatch();
+        // stopwatch.Start();
 
-        TimeSpan elapsed = stopwatch.Elapsed;
+        // Console.WriteLine(Function.IsAnagram("ACT", "TAC"));
+        // stopwatch.Stop();
 
-        Console.WriteLine($"Elapsed time: {elapsed.TotalMilliseconds} ms");
-        
+        // TimeSpan elapsed = stopwatch.Elapsed;
 
+        // Console.WriteLine($"Elapsed time: {elapsed.TotalMilliseconds} ms");
 
 
     }

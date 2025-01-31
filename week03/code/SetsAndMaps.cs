@@ -1,3 +1,4 @@
+using System.Data.Common;
 using System.Diagnostics;
 using System.Text.Json;
 
@@ -109,9 +110,38 @@ public static class SetsAndMaps
     /// 
 
 
-   public static bool IsAnagram(string word1, string word2){
-    return false;
-   }
+    public static bool IsAnagram(string word1, string word2)
+    {
+        var dictionary = new Dictionary<string, string> { 
+            { "First", word1.ToLower().Replace(" ", "") }, 
+            { "Second", word2.ToLower().Replace(" ", "") } 
+            };
+       
+
+        if (dictionary["First"].Length != dictionary["Second"].Length)
+        {
+            return false;
+        }
+
+
+        bool loop = true;
+        foreach (char letter in dictionary["Second"])
+        {
+            if (dictionary["First"].Contains(letter))
+            {
+                dictionary["First"] = dictionary["First"].Remove(dictionary["First"].IndexOf(letter), 1);
+                loop = true;
+
+            }
+            else
+            {
+                loop = false;
+                break;
+            }
+        }
+        return loop;
+
+    }
 
 
     /// <summary>
@@ -139,12 +169,33 @@ public static class SetsAndMaps
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
         var featureCollection = JsonSerializer.Deserialize<FeatureCollection>(json, options);
+        List<string> place = [];
+        List<decimal> magnitude = [];
+
 
         // TODO Problem 5:
         // 1. Add code in FeatureCollection.cs to describe the JSON using classes and properties 
         // on those classes so that the call to Deserialize above works properly.
         // 2. Add code below to create a string out each place a earthquake has happened today and its magitude.
         // 3. Return an array of these string descriptions.
-        return [];
+
+
+
+
+        for (int addIndex = 0; addIndex <= featureCollection.features.Count() - 1; addIndex++)
+        {
+            place.Add(featureCollection.features[addIndex].properties.place);
+            magnitude.Add(featureCollection.features[addIndex].properties.mag);
+        }
+
+        string[] result = new string[place.Count];
+
+
+        for (int index = 0; index <= result.Length - 1; index++)
+        {
+            result[index] = place[index] + " - Mag " + magnitude[index];
+        }
+
+        return result;
     }
 }
