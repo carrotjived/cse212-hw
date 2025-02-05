@@ -117,7 +117,6 @@ public static class SetsAndMaps
             { "Second", word2.ToLower().Replace(" ", "") } 
             };
        
-
         if (dictionary["First"].Length != dictionary["Second"].Length)
         {
             return false;
