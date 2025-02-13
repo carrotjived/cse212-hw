@@ -37,7 +37,7 @@ class Geeks
 
     public static void Main()
     {
-      
+
         // Console.WriteLine(Function.CheckBraces("(a == 3 or (b == 5 and c == 6))"));
         // // False ...wrong opening square bracket (stack had only '(' in it before it was popped and compared with ']')
         // //                          here -------\/
@@ -56,7 +56,7 @@ class Geeks
 
         // Console.WriteLine(reversed);
 
-        
+
         // var set1 = new HashSet<int>() { 1, 2, 34, 4, 5 };
         // var set2 = new HashSet<int>() { 4, 5, 6, 77, 8 };
         // var set3 = Function.OwnIntersect(set1,set2);
@@ -68,20 +68,38 @@ class Geeks
         // var set4 = Function.OwnUnion(set1, set2);
         // foreach(int number in set4){
         //     Console.WriteLine(number);
-            
+
         // }
 
         // Console.WriteLine();
 
         // var set5 = set1.Union(set2);
         // foreach(int number in set5){
-            
+
         //     Console.WriteLine(number);
         // }
 
-    Function.Permutations("ABC");
+        // Function.Permutations("ABC");
 
-    
+        // var people = new string[] { "Jane", "Jean", "Grey", "Marcus", "Theophilus", "Keje" };
+        // var firstFour = people[0..4];
+
+        var numbers = new int[]{10, 20, 30, 40, 50, 60};
+        var firstFour = numbers[0..5];
+        var midIndex = firstFour.Length/2;
+        var middle = firstFour[firstFour.Length / 2];
+
+        Console.WriteLine(middle);
+        Console.WriteLine(midIndex);
+        
+
+
+
+        
+
+
+
+
 
 
 

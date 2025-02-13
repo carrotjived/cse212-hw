@@ -175,7 +175,7 @@ public static class Recursion
             int index = pattern.IndexOf('*');
             pattern = pattern.Remove(index, 1);
             WildcardBinary(pattern.Insert(index, '1'.ToString()), results);
-            WildcardBinary(pattern.Insert(index, '0'.ToString()), results); 
+            WildcardBinary(pattern.Insert(index, '0'.ToString()), results);
         }
 
 
@@ -217,14 +217,10 @@ public static class Recursion
             return;
         }
 
-        if (x == -1 || y == -1){
+        if (x == -1 || y == -1)
+        {
             return;
         }
-
-        
-
-
-
         if (maze.IsEnd(x, y))
         {
             currPath.Add((x, y));
@@ -254,6 +250,7 @@ public static class Recursion
 
             if (maze.IsValidMove(currPath, x, y))
             {
+
                 if (!currPath.Contains((x, y)))
                 {
                     currPath.Add((x, y));
@@ -262,7 +259,7 @@ public static class Recursion
                 //Move to right
                 SolveMaze(results, maze, x + 1, y, currPath);
                 //Move to left 
-                SolveMaze(results, maze, x - 1,y, currPath);
+                SolveMaze(results, maze, x - 1, y, currPath);
                 //Move Up
                 SolveMaze(results, maze, x, y - 1, currPath);
                 //Move down
@@ -273,9 +270,7 @@ public static class Recursion
             else
             {
 
-               if (currPath.Contains((x,y))){
-                currPath.Remove((x,y));
-               }
+                currPath.RemoveAll(item => item == (x,y));
                 return;
             }
         }
