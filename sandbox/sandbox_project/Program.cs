@@ -1,63 +1,93 @@
-using System;
-using System.Diagnostics;
-using System.Text.Json;
-
-public class Program
-{
-    static void Main(string[] args)
-    {
-        // This project is here for you to use as a "Sandbox" to play around
-        // with any code or ideas you have that do not directly apply to
-        // one of your projects.
-        // Stopwatch stopwatch = new Stopwatch();
-        // stopwatch.Start();
-
-        // Console.WriteLine(Function.IsAnagram("ACT", "TAC"));
-        // stopwatch.Stop();
-
-        // TimeSpan elapsed = stopwatch.Elapsed;
-
-        // Console.WriteLine($"Elapsed time: {elapsed.TotalMilliseconds} ms");
-
-
-    }
-}
-
-// // C# program to illustrate the 
-// // List.AddRange Method 
 // using System;
+// using System.Diagnostics;
+// using System.Text.Json;
 // using System.Collections.Generic;
 // using System.Numerics;
 
-// class Geeks
+// public class Program
 // {
-
-//     public static void Main()
+//     static void Main(string[] args)
 //     {
-//         // True (stack was empty at the end)
-//         // Console.WriteLine(Function.CheckBraces("(a == 3 or (b == 5 and c == 6))"));
-//         // // False ...wrong opening square bracket (stack had only '(' in it before it was popped and compared with ']')
-//         // //                          here -------\/
-//         // Console.WriteLine(Function.CheckBraces("(students]i].Grade > 80 and students[i].Grade < 90"));
-//         // // False ....missing closing ')' (stack had an extra '(' in it at the end when it was supposed to be empty
-//         // //                 here -------\/
-//         // Console.WriteLine(Function.CheckBraces("(robot[id + 1].Execute(.Pass() || (!robot[id * (2 + i)].Alive && stormy) || (robot[id - 1].Alive && lavaFlowing))"));
+//         // This project is here for you to use as a "Sandbox" to play around
+//         // with any code or ideas you have that do not directly apply to
+//         // one of your projects.
+//         // Stopwatch stopwatch = new Stopwatch();
+//         // stopwatch.Start();
 
-//         // Console.WriteLine(Function.Run("a nut for a jar of tuna"));
-//         // Console.WriteLine(Function.Run2("5 3 7 + *"));
+//         // Console.WriteLine(Function.IsAnagram("ACT", "TAC"));
+//         // stopwatch.Stop();
 
-//         // SeedQueue.Run();
+//         // TimeSpan elapsed = stopwatch.Elapsed;
 
-//         // string original = "Stack Overflow";
-//         // string reversed = new string(original.Reverse().ToArray());
-
-//         // Console.WriteLine(reversed);
+//         // Console.WriteLine($"Elapsed time: {elapsed.TotalMilliseconds} ms");
 
 
 
 //     }
-
 // }
+
+// C# program to illustrate the 
+// List.AddRange Method 
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+
+class Geeks
+{
+
+    public static void Main()
+    {
+      
+        // Console.WriteLine(Function.CheckBraces("(a == 3 or (b == 5 and c == 6))"));
+        // // False ...wrong opening square bracket (stack had only '(' in it before it was popped and compared with ']')
+        // //                          here -------\/
+        // Console.WriteLine(Function.CheckBraces("(students]i].Grade > 80 and students[i].Grade < 90"));
+        // // False ....missing closing ')' (stack had an extra '(' in it at the end when it was supposed to be empty
+        // //                 here -------\/
+        // Console.WriteLine(Function.CheckBraces("(robot[id + 1].Execute(.Pass() || (!robot[id * (2 + i)].Alive && stormy) || (robot[id - 1].Alive && lavaFlowing))"));
+
+        // Console.WriteLine(Function.Run("a nut for a jar of tuna"));
+        // Console.WriteLine(Function.Run2("5 3 7 + *"));
+
+        // SeedQueue.Run();
+
+        // string original = "Stack Overflow";
+        // string reversed = new string(original.Reverse().ToArray());
+
+        // Console.WriteLine(reversed);
+
+        
+        // var set1 = new HashSet<int>() { 1, 2, 34, 4, 5 };
+        // var set2 = new HashSet<int>() { 4, 5, 6, 77, 8 };
+        // var set3 = Function.OwnIntersect(set1,set2);
+        // foreach(int number in set3){
+        //     Console.WriteLine(number);
+        //     Console.WriteLine();
+        // }
+
+        // var set4 = Function.OwnUnion(set1, set2);
+        // foreach(int number in set4){
+        //     Console.WriteLine(number);
+            
+        // }
+
+        // Console.WriteLine();
+
+        // var set5 = set1.Union(set2);
+        // foreach(int number in set5){
+            
+        //     Console.WriteLine(number);
+        // }
+
+    Function.Permutations("ABC");
+
+    
+
+
+
+    }
+
+}
 
 // using System;
 // namespace ConsoleApplication1 {
